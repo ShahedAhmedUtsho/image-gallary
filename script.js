@@ -1,5 +1,6 @@
 let gridImg = document.querySelectorAll('.grid .gird-item img');
 let navList =document.querySelectorAll('ul li');
+let photoList =document.querySelectorAll('.grid .gird-item');
 function hoverList(){
     let helloTrue =   this.classList.contains('hello');
     if(!helloTrue){
@@ -15,10 +16,36 @@ function hoverList(){
    
        
 }
+function addClassToAllPhoto(className){
+    for(let photo of photoList){
+        photo.classList.add(className)
+
+    }
+
+}
+
+
+function showPhotoFunction(arrayName){
+    for(let item of arrayName){
+
+   
+        if(item.classList.contains('check')){
+            item.classList.remove('hidden');
+            item.classList.remove('check')
+        
+        }else if(!item.classList.contains('check')){
+           
+           
+            item.classList.add('check')
+            item.classList.remove('hidden');
+        }
+    
+       }
+    }
 
 let mountainClass = document.querySelectorAll('.mountain');
 let animalClass = document.querySelectorAll('.animal');
-let birdsClass = document.querySelectorAll('.bird');
+let birdClass = document.querySelectorAll('.bird');
 
 let lakeClass = document.querySelectorAll('.lake');
 let flowerClass = document.querySelectorAll('.flower');
@@ -26,12 +53,108 @@ let catClass = document.querySelectorAll('.cat');
 let photoClass = document.querySelectorAll('.my-pics');
 
 
+let mountainArr=[]
+
+
+for(let item of mountainClass){
+    mountainArr.push(item)
+    
+}
+let animalArr=[]
+
+for(let item of animalClass){
+    animalArr.push(item)
+    
+}
+let birdArr=[]
+
+for(let item of birdClass){
+    birdArr.push(item)
+    
+}
+let lakeArr=[]
+
+for(let item of lakeClass){
+    lakeArr.push(item)
+    
+}
+let flowerArr=[]
+
+for(let item of flowerClass){
+    flowerArr.push(item)
+    
+}
+let catArr=[]
+
+for(let item of catClass){
+    catArr.push(item)
+    
+}
+let photoArr=[]
+
+for(let item of photoClass){
+    photoArr.push(item)
+    
+}
+
+
 
 function changePhoto(){
+
   let listInnerText =  this.innerText.toLowerCase();
+  if(listInnerText === 'all'){
+    for(let photo of photoList){
+        photo.classList.remove('hidden')
+
+    }
+  }
   
-  console.log(listInnerText)
+  
+
+
+  if(listInnerText === 'mountain'){
+    addClassToAllPhoto('hidden');
+    showPhotoFunction(mountainArr)
+
+  }
+  if(listInnerText === 'animal'){
+    addClassToAllPhoto('hidden');
+    showPhotoFunction(animalArr)
+
+  }
+  if(listInnerText === 'bird'){
+    addClassToAllPhoto('hidden');
+    showPhotoFunction(birdArr)
+
+  }
+  if(listInnerText === 'lake'){
+    addClassToAllPhoto('hidden');
+    showPhotoFunction(lakeArr)
+
+  }
+  
+
+  if(listInnerText === 'flower'){
+    addClassToAllPhoto('hidden');
+    showPhotoFunction(flowerArr)
+
+  }
+  if(listInnerText === 'cat'){
+    addClassToAllPhoto('hidden');
+    showPhotoFunction(catArr)
+
+  }
+  if(listInnerText === 'photo'){
+    addClassToAllPhoto('hidden');
+    showPhotoFunction(photoArr)
+
+  }
+  
+
+  
 }
+
+
 
 
 

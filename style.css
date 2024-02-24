@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+ul,li,.grid,.grid-item{
+    -webkit-transition: all 0.1s linear;
+    transition:  all 0.1s linear;
+
+
+}
 
 
 @media screen and (max-width:996px){
